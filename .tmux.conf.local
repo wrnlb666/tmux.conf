@@ -12,7 +12,7 @@ set -g allow-passthrough on
 set -ga update-environment TERM
 set -ga update-environment TERM_PROGRAM
 
-bind-key o popup
+bind-key o popup -d "#{pane_current_path}"
 
 
 # -- bindings ------------------------------------------------------------------
