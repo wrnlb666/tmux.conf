@@ -18,7 +18,7 @@ bind-key o display-popup \
 
 bind-key p display-popup \
     -d "#{pane_current_path}" \
-    -E "ipython"
+    -E "bpython"
 
 
 # -- bindings ------------------------------------------------------------------
