@@ -14,10 +14,14 @@ set -ga update-environment TERM_PROGRAM
 
 bind-key o display-popup \
     -d "#{pane_current_path}" \
+    -w 75% \
+    -h 75% \
     -E "zsh"
 
 bind-key p display-popup \
     -d "#{pane_current_path}" \
+    -w 75% \
+    -h 75% \
     -E "bpython"
 
 
