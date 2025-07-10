@@ -22,6 +22,12 @@ bind-key p display-popup \
     -d "#{pane_current_path}" \
     -w 75% \
     -h 75% \
+    -E "spf"
+
+bind-key P display-popup \
+    -d "#{pane_current_path}" \
+    -w 75% \
+    -h 75% \
     -E "bpython"
 
 
