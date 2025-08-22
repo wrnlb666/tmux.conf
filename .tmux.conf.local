@@ -5,7 +5,7 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 # my own changes
-set -g default-shell "/bin/zsh"
+set -g default-shell "$SHELL"
 set -as terminal-overrides ",*:RGB"
 
 set -g allow-passthrough on
@@ -16,19 +16,19 @@ bind-key o display-popup \
     -d "#{pane_current_path}" \
     -w 75% \
     -h 75% \
-    -E "zsh"
+    # -E "$SHELL"
 
 bind-key p display-popup \
     -d "#{pane_current_path}" \
     -w 75% \
     -h 75% \
-    -E "spf"
+    -E "spf" \
 
 bind-key P display-popup \
     -d "#{pane_current_path}" \
     -w 75% \
     -h 75% \
-    -E "bpython"
+    -E "bpython" \
 
 
 # -- bindings ------------------------------------------------------------------
