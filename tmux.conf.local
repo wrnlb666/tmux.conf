@@ -489,13 +489,12 @@ set -g @continuum-restore 'on'
 ##  /!\ make sure curl is installed
 #   ( \
 #       curl -f -s -m 5 'wttr.in?format=1' \
-#       || printf '\n' \
-#   ) | sed -E 's/ +/ /g'
-#   sleep 900                                         # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+#       || (printf ' \n'; sleep 10) \
+#   ) | (sed -E 's/ +/ /g'; sleep 900) \
 # }
 #
 # online() {
-#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
+#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔\n' || printf '✘\n'
 #   sleep 10
 # }
 #
