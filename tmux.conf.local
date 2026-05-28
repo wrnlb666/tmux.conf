@@ -16,31 +16,14 @@ bind-key o display-popup \
     -h 75% \
     # -E "$SHELL"
 
-bind-key p run-shell '
+bind-key p run-shell -b '
     target="#{pane_id}"
     tmux display-popup \
         -d "#{pane_current_path}" \
         -w 75% \
         -h 75% \
-        -E "
-            bash -lc '\''
-                case \"\$(uname -s)\" in
-                    Linux)
-                        export SPF_LAST_DIR=\"\${XDG_STATE_HOME:-\$HOME/.local/state}/superfile/lastdir\"
-                        ;;
-                    Darwin)
-                        export SPF_LAST_DIR=\"\$HOME/Library/Application Support/superfile/lastdir\"
-                        ;;
-                esac
-                command spf
-                if [[ -f \"\$SPF_LAST_DIR\" ]]; then
-                    tmux send-keys \
-                        -t \"'"$target"'\" \
-                        -- \"\$(cat \"\$SPF_LAST_DIR\")\" \
-                        C-m
-                    rm -f -- \"\$SPF_LAST_DIR\" > /dev/null
-                fi
-            '\''
+        -E "$SHELL -ic \
+            '\''tmux_spf_popup \"$target\"'\'' \
         "
     '
 
