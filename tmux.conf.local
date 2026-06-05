@@ -7,7 +7,7 @@
 # my own changes
 set -g default-shell "$SHELL"
 set -as terminal-overrides ",*:RGB"
-
+set -g update-environment "SSH_AUTH_SOCK SSH_CONNECTION DISPLAY"
 set -g allow-passthrough on
 
 bind-key o display-popup \
