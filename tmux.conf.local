@@ -31,7 +31,7 @@ bind-key P display-popup \
     -d "#{pane_current_path}" \
     -w 75% \
     -h 75% \
-    -E "python" \
+    -E "python3" \
 
 
 # -- bindings ------------------------------------------------------------------
